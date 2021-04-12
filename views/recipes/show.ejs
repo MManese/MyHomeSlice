@@ -1,16 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show</title>
-</head>
-<body>
-    <h1><%= recipe.title %></h1>
-    <p><a href="/recipes/<%= recipe._id%>/edit">Edit</a></p>
-    <footer>
-        <a href="/recipes">All Recipes</a>
-    </footer>
-</body>
-</html>
+<% layout('layouts/boilerplate')%>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <img src="<%= recipe.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title"> <%= recipe.title %> </h2>
+                <p class="card-text"> Servings: <%= recipe.servings %> </p>
+                <p class="card-text"> <%= recipe.description %> </p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h3>Ingredients</h3>
+                    <p> <%= recipe.ingredients %> </p>
+                </li>
+                <li class="list-group-item">
+                    <h3>Directions</h3>
+                    <p> <%= recipe.directions %> </p>
+                </li>
+                
+            </ul>
+
+
+            <div class="card-body">
+                <a class="card-link btn btn-info" href="/recipes/<%= recipe._id%>/edit">Edit</a>
+                <form class="d-inline" action="/recipes/<%=recipe._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="/recipes">All Recipes</a>
+            </div>
+        </div>
+    </div>
+</div>
