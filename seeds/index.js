@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { foods, descriptors } = require('./seedHelpers');
+const { foods, descriptors, images } = require('./seedHelpers');
 const Recipe = require('../models/recipe');
 
 mongoose.connect('mongodb://localhost:27017/my-home-slice',{
@@ -20,12 +20,15 @@ const seedDB = async () => {
     await Recipe.deleteMany({});
     for(let i = 0; i < 50; i++) {
         const rep = new Recipe({
-            image: 'https://source.unsplash.com/collection/1353633',
+            image: `${sample(images)}`,
             title: `${sample(descriptors)} ${sample(foods)}`,
-            servings: 'Lorem ipsum',
-            ingredients: 'apples, gluten-free, flour, butter, chicken',
-            directions: 'one, two, three, four',
-            description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, blanditiis! Ullam fugiat nihil aliquam accusamus, exercitationem rem voluptates numquam error neque soluta voluptate quibusdam praesentium atque in explicabo eum laborum.'
+            servings: 10,
+            cooktime: '1 hour',
+            ingredients: 'apples, gluten-free flour, butter',
+            directions: '1. Step one, 2. Step two, 3. Step three, 4. Step four',
+            description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt, blanditiis! Ullam fugiat nihil aliquam accusamus, exercitationem rem voluptates numquam error neque soluta voluptate quibusdam praesentium atque in explicabo eum laborum.',
+            category: 'Dessert',
+            favorite: 'yes'
 
         })
         await rep.save();

@@ -5,13 +5,18 @@ const RecipeSchema = new Schema({
     title: String,
     image: String,
     description: String,
-    servings: String,
+    servings: Number,
     cooktime: String,
     note: String,
     ingredients: String,
     directions: String,
     category: String,
-    favorite: Boolean
+    reviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref:'Review'
+        }
+    ]
 });
 
 module.exports = mongoose.model('Recipe', RecipeSchema);
