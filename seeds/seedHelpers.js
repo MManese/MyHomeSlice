@@ -44,24 +44,128 @@ module.exports.foods = [
 ]
 
 module.exports.images = [
-    'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1253&q=80',
-    'https://images.unsplash.com/photo-1612392061787-2d078b3e573c?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80',
-    'https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-    'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-    'https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80',
-    'https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-    'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-    'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80',
-    'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-    'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-    'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-    'https://images.unsplash.com/photo-1481070555726-e2fe8357725c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80',
-    'https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=701&q=80',
-    'https://images.unsplash.com/photo-1432139509613-5c4255815697?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=632&q=80',
-    'https://images.unsplash.com/photo-1488477181946-6428a0291777?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
-    'https://images.unsplash.com/photo-1488900128323-21503983a07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80',
-    'https://images.unsplash.com/photo-1606851181064-b7507b24377c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-    'https://images.unsplash.com/photo-1502301103665-0b95cc738daf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80',
-    'https://images.unsplash.com/photo-1605926637512-c8b131444a4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401615/MyHomeSlice/iuctqslugmrht8loij8p.jpg',
+        filename: 'MyHomeSlice/iuctqslugmrht8loij8p'
+    },
+    {
+
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401618/MyHomeSlice/zkfxoinquqeyjp5iquxv.jpg',
+        filename: 'MyHomeSlice/zkfxoinquqeyjp5iquxv'
+    },
+    {
+
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401620/MyHomeSlice/ztslglsup2drfqsbl5ls.jpg',
+        filename: 'MyHomeSlice/ztslglsup2drfqsbl5ls'
+    },
+    {
+
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401622/MyHomeSlice/oufovvcbwziqga70yczs.jpg',
+        filename: 'MyHomeSlice/oufovvcbwziqga70yczs'
+    },
+    {
+
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401626/MyHomeSlice/hjgm4lgnwylnbhdlkpfr.jpg',
+        filename: 'MyHomeSlice/hjgm4lgnwylnbhdlkpfr'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401697/MyHomeSlice/m8fzae6rbbbluhn2wa8f.jpg',
+        filename: 'MyHomeSlice/m8fzae6rbbbluhn2wa8f'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401703/MyHomeSlice/nnscon5swbwojnv5whlf.jpg',
+        filename: 'MyHomeSlice/nnscon5swbwojnv5whlf'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401700/MyHomeSlice/wgp6f9o5shox4l6qgsdo.jpg',
+        filename: 'MyHomeSlice/wgp6f9o5shox4l6qgsdo'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401702/MyHomeSlice/aezss4keiqbq09bhij6c.jpg',
+        filename: 'MyHomeSlice/aezss4keiqbq09bhij6c'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401705/MyHomeSlice/ndnvatbiohu3q92sr10r.jpg',
+        filename: 'MyHomeSlice/ndnvatbiohu3q92sr10r'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401793/MyHomeSlice/augh83nahwsyjbudexxy.jpg',
+        filename: 'MyHomeSlice/augh83nahwsyjbudexxy'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401801/MyHomeSlice/sssnoy4lbehrbzqbqhk2.jpg',
+        filename: 'MyHomeSlice/sssnoy4lbehrbzqbqhk2'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401804/MyHomeSlice/pbjzl1uxayp4nnuplhwp.jpg',
+        filename: 'MyHomeSlice/pbjzl1uxayp4nnuplhwp'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401806/MyHomeSlice/ncq70slhoagfraub0xuw.jpg',
+        filename: 'MyHomeSlice/ncq70slhoagfraub0xuw'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619401807/MyHomeSlice/ocurvu0ivwjo4o4drqhw.jpg',
+        filename: 'MyHomeSlice/ocurvu0ivwjo4o4drqhw'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402260/MyHomeSlice/ocqtgx3gohnkbz5j5u8g.jpg',
+        filename: 'MyHomeSlice/ocqtgx3gohnkbz5j5u8g'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402262/MyHomeSlice/zvizyynispum11jsyoyg.jpg',
+        filename: 'MyHomeSlice/zvizyynispum11jsyoyg'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402265/MyHomeSlice/d9rsgmelofnmlz48khrr.jpg',
+        filename: 'MyHomeSlice/d9rsgmelofnmlz48khrr'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402267/MyHomeSlice/wyzgxtyspcbrh7g8dckf.jpg',
+        filename: 'MyHomeSlice/wyzgxtyspcbrh7g8dckf'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402270/MyHomeSlice/nbjjnxvbmfwpirwm8vrs.jpg',
+        filename: 'MyHomeSlice/nbjjnxvbmfwpirwm8vrs'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402342/MyHomeSlice/ryqelnu3yiney09oxvr8.jpg',
+        filename: 'MyHomeSlice/ryqelnu3yiney09oxvr8'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402347/MyHomeSlice/m87vuqfwoko028ohxckj.jpg',
+        filename: 'MyHomeSlice/m87vuqfwoko028ohxckj'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402354/MyHomeSlice/hpiy2yph6noebtljdcpp.jpg',
+        filename: 'MyHomeSlice/hpiy2yph6noebtljdcpp'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402359/MyHomeSlice/c4b9n9lwtnanovrhygwa.jpg',
+        filename: 'MyHomeSlice/c4b9n9lwtnanovrhygwa'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402359/MyHomeSlice/a8xfigvgpsygfawlebpy.jpg',
+        filename: 'MyHomeSlice/a8xfigvgpsygfawlebpy'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402442/MyHomeSlice/wipwueavbw1f9jx7ic92.jpg',
+        filename: 'MyHomeSlice/wipwueavbw1f9jx7ic92'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402444/MyHomeSlice/kbrj0dzubppjnon3btxn.jpg',
+        filename: 'MyHomeSlice/kbrj0dzubppjnon3btxn'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402450/MyHomeSlice/tkj2hhxnyaxqhd7cw3j7.jpg',
+        filename: 'MyHomeSlice/tkj2hhxnyaxqhd7cw3j7'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402451/MyHomeSlice/omjhzxioi0efxfssbivw.jpg',
+        filename: 'MyHomeSlice/omjhzxioi0efxfssbivw'
+    },
+    {
+        url: 'https://res.cloudinary.com/dprujjry9/image/upload/v1619402456/MyHomeSlice/i2vune4ogu5i2xmgwplo.jpg',
+        filename: 'MyHomeSlice/i2vune4ogu5i2xmgwplo'
+    }
 ]

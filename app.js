@@ -1,18 +1,28 @@
+if (process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
+
 const express = require ('express');
 const path = require ('path');
 const mongoose = require('mongoose');
 const ejsMate = require('ejs-mate');
-const{recipeSchema, reviewSchema} = require('./schemas.js');
-const catchAsync = require('./utils/catchAsync');
+const session = require('express-session');
+const flash = require('connect-flash');
 const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
-const Recipe = require('./models/recipe');
-const Review = require('./models/review');
+const passport = require('passport');
+const LocalStrategy = require ('passport-local');
+const User = require('./models/user');
+
+const userRoutes = require('./routes/users');
+const recipeRoutes = require('./routes/recipes');
+const reviewRoutes = require('./routes/reviews');
 
 mongoose.connect('mongodb://localhost:27017/my-home-slice',{
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 const db = mongoose.connection;
@@ -29,83 +39,48 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')))
 
-//validate new and update recipe data using Joi
-const validateRecipe = (req, res, next) => {
-    const {error} = recipeSchema.validate(req.body);
-    if(error){
-        const msg = error.details.map(el => el.message).join(',')
-        throw new ExpressError(msg, 400)
-    } else {
-        next();
+const sessionConfig = {
+    secret:'thisshouldbeabettersecret!',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
+app.use(session(sessionConfig))
+app.use(flash());
 
-//validate recipe review data using Joi
-const validateReview = (req, res, next) => {
-    const {error} = reviewSchema.validate(req.body);
-    if(error){
-        const msg = error.details.map(el => el.message).join(',')
-        throw new ExpressError(msg, 400)
-    } else {
-        next();
-    }
-}
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use((req,res,next) => {
+    res.locals.currentUser = req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+   next();
+})
+
+app.get('/fakeUser', async (req, res) => {
+    const user = new User ({ email: 'myhomeslice@gmail.com', username: 'myhomeslice' });
+    const newUser = await User.register(user, 'cookbook');
+    res.send (newUser);
+})
+
+app.use('/', userRoutes);
+app.use('/recipes', recipeRoutes)
+app.use('/recipes/:id/reviews', reviewRoutes)
 
 app.get('/', (req, res) => {
     res.render('home')
 });
-
-app.get('/recipes', catchAsync(async(req, res) => {
-    const recipes = await Recipe.find({});
-    res.render('recipes/index', {recipes})
-}));
-
-app.get('/recipes/new', (req, res) => {
-    res.render('recipes/new');
-})
-
-//make new recipe
-app.post('/recipes', validateRecipe, catchAsync (async(req, res, next) => {
-    //if(!req.body.recipe) throw new ExpressError('Invalid Recipe Data', 400);
-    const recipe = new Recipe(req.body.recipe);
-    await recipe.save();
-    res.redirect(`/recipes/${recipe._id}`)
-}))
-
-app.get('/recipes/:id', catchAsync(async(req, res) => {
-    const recipe = await Recipe.findById(req.params.id)
-    res.render('recipes/show', { recipe });
-}))
-
-app.get('/recipes/:id/edit', catchAsync(async(req, res) => {
-    const recipe = await Recipe.findById(req.params.id)
-    res.render('recipes/edit', { recipe });
-}))
-
-//update recipe
-app.put('/recipes/:id', validateRecipe, catchAsync(async (req, res) =>{
-    const { id } = req.params;
-    const recipe = await Recipe.findByIdAndUpdate(id, { ...req.body.recipe });
-    res.redirect(`/recipes/${recipe._id}`)
-}));
-
-//delete recipe
-app.delete('/recipes/:id', catchAsync(async (req, res) => {
-    const { id } = req.params;
-    await Recipe.findByIdAndDelete(id);
-    res.redirect('/recipes');
-}));
-
-//recipe review
-app.post('/recipes/:id/reviews',validateReview, catchAsync(async(req,res) => {
-    const recipe = await Recipe.findById(req.params.id);
-    const review = new Review(req.body.review);
-    recipe.reviews.push(review);
-    await review.save();
-    await recipe.save();
-    res.redirect(`/recipes/${recipe._id}`);
-}))
 
 app.all('*',(req, res, next) => {
     next(new ExpressError('Page Not Found', 404))

@@ -2,32 +2,43 @@
 <div class="row">
     <h1 class="text-center">New Recipe</h1>
     <div class="col-6 offset-3">
-        <form action="/recipes" method="POST" novalidate class="validated-form">
+        <form action="/recipes" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="recipe[title]" required>
-            </div>
-            <div class="mb-3">
-                <label for="servings" class="form-label">Servings</label>
-                <input type="text" class="form-control" id="servings" name="recipe[servings]" required>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">description</label>
                 <textarea type="text" class="form-control" id="description" name="recipe[description]" required></textarea>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Image Url</label>
-                <input type="text" class="form-control" id="image" name="recipe[image]"required>
+                <label for="servings" class="form-label">Servings</label>
+                <input type="text" class="form-control" id="servings" name="recipe[servings]" required>
+            </div>
+            <div class="mb-3">
+                <label for="cooktime" class="form-label">Cook Time</label>
+                <input type="text" class="form-control" id="cooktime" name="recipe[cooktime]" required>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="category" name="recipe[category]" required>
             </div>
             <div class="mb-3">
                 <label for="ingredients" class="form-label">Ingredients</label>
                 <textarea type="text" class="form-control" id="ingredients" name="recipe[ingredients]" required></textarea>
             </div>
-            <div class="mb-3">
+            <div class="mb-5">
                 <label for="directions" class="form-label">Directions</label>
                 <textarea type="text" class="form-control" id="directions" name="recipe[directions]" required></textarea>
             </div>
-            <div class="mb-3">
+            
+            <input type="file" name="image" id="" multiple>
+            
+            <!-- <div class="mb-3">
+                <label for="image" class="form-label">Image Url</label>
+                <input type="text" class="form-control" id="image" name="recipe[image]"required>
+            </div> -->
+            <div class="mt-5 mb-3">
                 <button class="btn btn-success">Add Recipe</button>
             </div>
         </form>

@@ -2,7 +2,7 @@
     <div class="row">
         <h1 class="text-center">Edit Recipe</h1>
         <div class="col-6 offset-3">
-            <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST" novalidate class="validated-form">
+            <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title" name="recipe[title]" value="<%=recipe.title %>" required>
@@ -12,12 +12,16 @@
                     <input type="text" class="form-control" id="servings" name="recipe[servings]" value="<%=recipe.servings %>" required>
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">description</label>
-                    <textarea type="text" class="form-control" id="description" name="recipe[description]" required> <%= recipe.description %> </textarea>
+                    <label for="cooktime" class="form-label">Cook Time</label>
+                    <input type="text" class="form-control" id="cooktime" name="recipe[cooktime]" value="<%=recipe.cooktime %>" required>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Image Url</label>
-                    <input type="text" class="form-control" id="image" name="recipe[image]" value="<%= recipe.image %>"required>
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="recipe[category]" value="<%=recipe.category %>" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <textarea type="text" class="form-control" id="description" name="recipe[description]" required> <%= recipe.description %> </textarea>
                 </div>
                 <div class="mb-3">
                     <label for="ingredients" class="form-label">Ingredients</label>
@@ -26,6 +30,10 @@
                 <div class="mb-3">
                     <label for="directions" class="form-label">Directions</label>
                     <textarea type="text" class="form-control" id="directions" name="recipe[directions]" required> <%= recipe.directions %> </textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Add Images</label>
+                    <input type="file" name="image" id="image" multiple>
                 </div>
                 <div class="mb-3">
                     <button class="btn btn-info">Update Recipe</button>

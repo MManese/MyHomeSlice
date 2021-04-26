@@ -6,10 +6,13 @@ module.exports.recipeSchema = Joi.object({
     recipe: Joi.object({
         title: Joi.string().required(),
         servings: Joi.number().required().min(1),
+        cooktime: Joi.string(),
+        category: Joi.string(),
         description: Joi.string(),
-        image: Joi.string(),
         ingredients: Joi.string(),
-        directions: Joi.string()
+        directions: Joi.string(),
+        //image: Joi.string()
+        
     }).required() 
 });
 
