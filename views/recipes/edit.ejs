@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>   
     <div class="row">
         <h1 class="text-center">Edit Recipe</h1>
-        <div class="col-6 offset-3">
+        <div class="col-md-6 offset-md-3">
             <form action="/recipes/<%=recipe.id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -32,8 +32,17 @@
                     <textarea type="text" class="form-control" id="directions" name="recipe[directions]" required> <%= recipe.directions %> </textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Add Images</label>
-                    <input type="file" name="image" id="image" multiple>
+                    <label for="image" class="form-label" >Add Image(s)...</label>
+                    <input class="form-control" type="file" id="image" name ="image" multiple>
+                </div>
+                <div class="mb-3">
+                    <% recipe.images.forEach(function(img,i) { %> 
+                        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                        </div>
+                        <label for="image-<%=i%>">Delete? </label>
+                    <% }) %>
                 </div>
                 <div class="mb-3">
                     <button class="btn btn-info">Update Recipe</button>

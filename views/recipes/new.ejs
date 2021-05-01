@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>
 <div class="row">
     <h1 class="text-center">New Recipe</h1>
-    <div class="col-6 offset-3">
+    <div class="col-md-6 offset-md-3">
         <form action="/recipes" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -27,17 +27,15 @@
                 <label for="ingredients" class="form-label">Ingredients</label>
                 <textarea type="text" class="form-control" id="ingredients" name="recipe[ingredients]" required></textarea>
             </div>
-            <div class="mb-5">
+            <div class="mb-3">
                 <label for="directions" class="form-label">Directions</label>
                 <textarea type="text" class="form-control" id="directions" name="recipe[directions]" required></textarea>
             </div>
-            
-            <input type="file" name="image" id="" multiple>
-            
-            <!-- <div class="mb-3">
-                <label for="image" class="form-label">Image Url</label>
-                <input type="text" class="form-control" id="image" name="recipe[image]"required>
-            </div> -->
+            <div class="mb-3">
+                <label for="image" class="form-label">Add Image(s)...</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+              </div>
+            <!-- <input type="file" name="image" id="" multiple> -->
             <div class="mt-5 mb-3">
                 <button class="btn btn-success">Add Recipe</button>
             </div>

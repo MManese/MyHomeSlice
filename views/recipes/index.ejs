@@ -5,10 +5,15 @@
 </div>
 
 <% for (let recipe of recipes) {%>
-    <div class="card" mb-3>
+    <div class="card mb-3">
         <div class="row">
             <div class="col-md-4">
-                <img class="img-fluid" src="<%= recipe.images[0].url%>">
+                <%if(recipe.images.length) {%>
+                    <img class="img-fluid" alt="" src="<%=recipe.images[0].url%>">
+                    <% }else {%>
+                        <img class="img-fluid" alt=""
+                            src="https://res.cloudinary.com/dprujjry9/image/upload/v1619564057/HomeSliceHome/myrecipe_ft0iph.jpg">
+                        <% } %>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
